@@ -15,11 +15,10 @@ let {handleSubmit,values,dirty,isValid,handleChange} = useFormik({
   onSubmit:()=>{
   }
 })
-let url = window.location.origin
       console.log(id)
        function createOnlinePayment(values){
         setLoading(false)
-        axios.post(`https://ecommerce.routemisr.com/api/v1/orders/checkout-session/${id}?${url}`,{shippingAddress:values},
+        axios.post(`https://ecommerce.routemisr.com/api/v1/orders/checkout-session/${id}?url=https://abdelaleem-fresh-cart-bay.vercel.app`,{shippingAddress:values},
         {
           headers:{
           token: localStorage.getItem('token')
