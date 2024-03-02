@@ -14,7 +14,6 @@ export default function Navbar() {
     localStorage.removeItem("token");
   }
   const [scroll, setScroll] = useState(false);
-console.log(window.scrollY)
 useEffect(() => {
   window.addEventListener("scroll", () => {
     setScroll(window.scrollY > 1);
