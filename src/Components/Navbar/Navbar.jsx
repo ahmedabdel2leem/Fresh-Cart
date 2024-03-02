@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import frechCartLogo from "../../assets/images/freshcart-logo.svg";
 import "./Navbar.css";
@@ -13,9 +13,16 @@ export default function Navbar() {
   function deleteToken() {
     localStorage.removeItem("token");
   }
+  const [scroll, setScroll] = useState(false);
+console.log(window.scrollY)
+useEffect(() => {
+  window.addEventListener("scroll", () => {
+    setScroll(window.scrollY > 1);
+  });
+},[window.scrollY]);
   return (
     <>
-      <nav className="navbar navbar-expand-lg bg-body-tertiary">
+      <nav className={`navbar  navbar-expand-lg bg-body-tertiary  ${scroll ? "fixed-top" : ""}`}>
         <div className="container">
           <NavLink className="navbar-brand" to="/">
             <img src={frechCartLogo} alt="Logo" />
