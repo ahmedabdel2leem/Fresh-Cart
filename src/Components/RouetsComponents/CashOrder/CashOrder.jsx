@@ -69,7 +69,7 @@ export default function CashOrder() {
         <input  className='form-control mb-3'value={values.phone} onChange={handleChange} onBlur={handleBlur} type="text" name='phone' id='phone' />
         {errors.phone && touched.phone ? <div className='alert alert-danger'>{errors.phone}</div>: ''}
         {errMsg ? <div className='alert alert-danger'>{errMsg}</div> : ''}
-        <button disabled={!(dirty && isValid)}  type='submit' className='btn bg-main text-white'>{loading ? 'Update Data' : <i className='fa fa-spinner fa-spin'></i>}</button>
+        <button disabled={!(dirty && isValid)}  type='submit' className='btn bg-main text-white'>{loading ? 'Submit' : <i className='fa fa-spinner fa-spin'></i>}</button>
       </form>
       </div>
     </>

@@ -18,7 +18,7 @@ let {handleSubmit,values,dirty,isValid,handleChange} = useFormik({
       console.log(id)
        function createOnlinePayment(values){
         setLoading(false)
-        axios.post(`https://ecommerce.routemisr.com/api/v1/orders/checkout-session/${id}`,{shippingAddress:values},
+        axios.post(`https://ecommerce.routemisr.com/api/v1/orders/checkout-session/${id}?url=https://abdelaleem-fresh-cart-bay.vercel.app`,{shippingAddress:values},
         {
           headers:{
           token: localStorage.getItem('token')
@@ -46,7 +46,7 @@ let {handleSubmit,values,dirty,isValid,handleChange} = useFormik({
         <input  className='form-control mb-3'value={values.phone} onChange={handleChange}  type="text" name='phone' id='phone' />
         <label htmlFor="city">city : </label>
         <input  className='form-control mb-3'value={values.city} onChange={handleChange}  type="text" name='city' id='city' />
-        <button disabled={!(dirty && isValid)} onClick={()=>createOnlinePayment(values)}  type='submit' className='btn bg-main text-white'>{loading ? 'SignUp' : <i className='fa fa-spinner fa-spin'></i>}</button>
+        <button disabled={!(dirty && isValid)} onClick={()=>createOnlinePayment(values)}  type='submit' className='btn bg-main text-white'>{loading ? 'Submit' : <i className='fa fa-spinner fa-spin'></i>}</button>
 
       </form>
     </>
