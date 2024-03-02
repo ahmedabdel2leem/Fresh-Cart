@@ -1,0 +1,12 @@
+.navbar a:hover,.navbar .active{
+    color: var(--main-color) !important;
+    
+}
+a{
+    font-weight: 600 !important;
+}
+
+.dropdown-menu{
+    align-items: center;
+min-width: fit-content  !important;
+}
