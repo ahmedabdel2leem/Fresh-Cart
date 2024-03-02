@@ -5,6 +5,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import * as Yup from 'yup'
 import { cartCounterContext } from './../../../Context/cartCounterContext';
+import {Helmet} from "react-helmet";
 export default function CashOrder() {
     const [errMsg , setErrMsg] = useState('')
     const [loading,setLoading] =useState(true)
@@ -51,6 +52,11 @@ export default function CashOrder() {
   
   return (
     <>
+       <Helmet>
+                <meta charSet="utf-8" />
+                <title>Cash Order</title>
+                <link rel="canonical" href="http://mysite.com/example" />
+            </Helmet>
        <div className="container">
     <form onSubmit={handleSubmit}>
         <label htmlFor="details">Details : </label>

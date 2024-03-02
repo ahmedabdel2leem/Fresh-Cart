@@ -2,7 +2,7 @@ import axios from 'axios'
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
-
+import {Helmet} from "react-helmet";
 export default function ForgetPassword() {
 const [email, setEmail] = useState('')
 let  navigate = useNavigate()
@@ -21,6 +21,11 @@ const handleSubmit =()=>{
         })
 }
   return <>
+   <Helmet>
+                <meta charSet="utf-8" />
+                <title>Forget Password</title>
+                <link rel="canonical" href="http://mysite.com/example" />
+            </Helmet>
   <div className="container">
   <label htmlFor="email">E-mail : </label>
         <input  className='form-control mb-3' onChange={({target})=>setEmail(target.value)}  type="email" name='email' id='email' />

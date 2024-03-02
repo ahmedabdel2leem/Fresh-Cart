@@ -2,7 +2,7 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import Loading from 'react-loading';
 import { Link } from 'react-router-dom'
-
+import {Helmet} from "react-helmet";
 export default function Brands() {
   // state to recives the data
   const [allbrands, setAllbrands] = useState(null)
@@ -23,6 +23,11 @@ export default function Brands() {
   <Loading color="#0aad0a" type="spin"/>
 </div>)
   return<>
+     <Helmet>
+                <meta charSet="utf-8" />
+                <title>Brands</title>
+                <link rel="canonical" href="http://mysite.com/example" />
+            </Helmet>
     <section id='categories '>
       <div className="container mt-5">
         <div className="row g-4">

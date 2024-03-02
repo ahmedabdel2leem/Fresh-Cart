@@ -4,7 +4,7 @@ import { toast } from "react-toastify";
 import Loading from "react-loading";
 import { WishListContext } from "../../Context/WishListCOntext";
 import { cartCounterContext } from "../../Context/cartCounterContext";
-
+import {Helmet} from "react-helmet";
 export default function WishList() {
   const { addToCart, setCartCount } = useContext(cartCounterContext);
   const { removeItemFromWishList, wishList, getUserWishList, loadWishList } = useContext(WishListContext);
@@ -56,6 +56,11 @@ export default function WishList() {
 
   return (
     <>
+       <Helmet>
+                <meta charSet="utf-8" />
+                <title>Wish List</title>
+                <link rel="canonical" href="http://mysite.com/example" />
+            </Helmet>
       <div className="container">
         <div className="row">
           {wishList.map((item) => {

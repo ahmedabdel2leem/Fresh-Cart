@@ -3,7 +3,7 @@ import { useFormik } from 'formik'
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import * as Yup from 'yup'
-
+import {Helmet} from "react-helmet";
 export default function Signup() {
   const [errMsg , setErrMsg] = useState('');
   const [loading , setLoading] =useState(true)
@@ -42,6 +42,11 @@ let  validationSchema= new Yup.object({
   })
 
   return <>
+     <Helmet>
+                <meta charSet="utf-8" />
+                <title>Sing Up</title>
+                <link rel="canonical" href="http://mysite.com/example" />
+            </Helmet>
       <form onSubmit={handleSubmit}>
         <label htmlFor="name">Name : </label>
         <input className='form-control mb-3' value={values.name} onChange={handleChange} onBlur={handleBlur} type="text" name='name' id='name' />

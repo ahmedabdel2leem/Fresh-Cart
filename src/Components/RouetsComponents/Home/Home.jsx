@@ -6,6 +6,7 @@ import Slider from "react-slick";
 import Products from './../Products/Products';
 import { cartCounterContext } from "../../../Context/cartCounterContext";
 import { Link } from "react-router-dom";
+import {Helmet} from "react-helmet";
 export default function Home() {
 
  const {getAllCategories} = useContext(cartCounterContext);
@@ -44,6 +45,7 @@ export default function Home() {
   return (
     <>
     {/* first part  */}
+
       <div className="container">
         <div className="row g-2">
           <div className="col-md-9">
@@ -88,7 +90,11 @@ export default function Home() {
 
       {/*  products table */}
       <Products/>
-
+      <Helmet>
+                <meta charSet="utf-8" />
+                <title>Home</title>
+                <link rel="canonical" href="http://mysite.com/example" />
+            </Helmet>
     </>
   );
 }

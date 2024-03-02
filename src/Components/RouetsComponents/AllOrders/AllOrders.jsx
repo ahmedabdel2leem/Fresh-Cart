@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Loading from "react-loading";
 import { Link } from "react-router-dom";
-
+import {Helmet} from "react-helmet";
 export default function AllOrders() {
   const [data, setData] = useState([]);
   const [isLoading, setisLoading] = useState(true)
@@ -30,6 +30,11 @@ if(!data || data.data.length == 0) return<h1 className="empty text-main text-cen
 
   return (
     <>
+       <Helmet>
+                <meta charSet="utf-8" />
+                <title>All Orders</title>
+                <link rel="canonical" href="http://mysite.com/example" />
+            </Helmet>
       <div className="container mt-4">
         <div className="row g-4">
           {data?.data?.map((item) => {

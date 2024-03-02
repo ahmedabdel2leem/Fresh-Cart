@@ -5,7 +5,7 @@ import axios from "axios";
 import { baseUrl } from "../../../utils/baseUrl";
 import { Link, NavLink } from "react-router-dom";
 import { cartCounterContext } from './../../../Context/cartCounterContext';
-
+import {Helmet} from "react-helmet";
 export default function Cart() {
   // state & context
   let { setCartCount,getUserCart, deleteProduct ,updateQTY}  = useContext(cartCounterContext);
@@ -83,6 +83,11 @@ export default function Cart() {
 
   return (
     <>
+       <Helmet>
+                <meta charSet="utf-8" />
+                <title>Cart</title>
+                <link rel="canonical" href="http://mysite.com/example" />
+            </Helmet>
       <div className="container-fluid bg-main-light p-4 pb-5">
         <div className="d-flex justify-content-between align-items-center">
         <div>

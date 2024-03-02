@@ -3,7 +3,7 @@ import React, { useContext, useEffect, useState } from "react";
 import Loading from "../../Loading/Loading";
 import { useQuery } from "react-query";
 import Product from "../../Childrens/Product/Product";
-
+import {Helmet} from "react-helmet";
 export default function Products() {
   function getProducts(page) {
     return axios.get(
@@ -34,6 +34,11 @@ const [serachTrem, setSerachTrem] = useState("");
   if (isLoading) return <Loading />;
   return (
     <>
+       <Helmet>
+                <meta charSet="utf-8" />
+                <title>Products</title>
+                <link rel="canonical" href="http://mysite.com/example" />
+            </Helmet>
     <section id="products">
       <div className="form-floating mt-5 mb-3 m-auto w-50 m-auto">
         <input

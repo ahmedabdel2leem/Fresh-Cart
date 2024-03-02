@@ -2,7 +2,7 @@ import axios from 'axios'
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
-
+import {Helmet} from "react-helmet";
 export default function ResetPassword() {
   const navigate = useNavigate()
   // handel the value and the type
@@ -25,6 +25,11 @@ const [[password,type], setPassword] = useState([null,'password'])
     })
   }
   return <>
+     <Helmet>
+                <meta charSet="utf-8" />
+                <title>Reset Password</title>
+                <link rel="canonical" href="http://mysite.com/example" />
+            </Helmet>
   <div className="container mt-5">
         <label htmlFor="email">newPassword : </label>
         <div className='reset-password position-relative '>

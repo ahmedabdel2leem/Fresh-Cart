@@ -4,7 +4,7 @@ import { useFormik } from 'formik'
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import * as Yup from 'yup'
-
+import {Helmet} from "react-helmet";
 export default function Signin() {
   const [errMsg , setErrMsg] = useState('')
   const [loading,setLoading] =useState(true)
@@ -39,7 +39,11 @@ let  validationSchema= new Yup.object({
 
 
 return <>
-
+   <Helmet>
+                <meta charSet="utf-8" />
+                <title>Sign In</title>
+                <link rel="canonical" href="http://mysite.com/example" />
+            </Helmet>
   <form onSubmit={handleSubmit}>
         <label htmlFor="email">E-mail : </label>
         <input  className='form-control mb-3'value={values.email} onChange={handleChange} onBlur={handleBlur} type="email" name='email' id='email' />

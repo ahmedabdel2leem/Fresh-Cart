@@ -4,6 +4,7 @@ import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import * as Yup from 'yup'
+import {Helmet} from "react-helmet";
 export default function UpdateUserData() {
     const [errMsg , setErrMsg] = useState('')
     const [loading,setLoading] =useState(true)
@@ -46,6 +47,11 @@ export default function UpdateUserData() {
     })
   
   return <>
+     <Helmet>
+                <meta charSet="utf-8" />
+                <title>Update Data</title>
+                <link rel="canonical" href="http://mysite.com/example" />
+            </Helmet>
   <div className="container">
     <form onSubmit={handleSubmit}>
         <label htmlFor="email">E-mail : </label>

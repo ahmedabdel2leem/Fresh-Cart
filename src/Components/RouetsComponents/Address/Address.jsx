@@ -2,7 +2,7 @@ import axios from 'axios'
 import { useFormik } from 'formik'
 import React, { useState } from 'react'
 import { useParams } from 'react-router-dom'
-
+import {Helmet} from "react-helmet";
 export default function Address() {
 let {id} =useParams()
 const [loading,setLoading] =useState(true)
@@ -34,7 +34,11 @@ let {handleSubmit,values,dirty,isValid,handleChange} = useFormik({
 
 
   return<>
-  
+     <Helmet>
+                <meta charSet="utf-8" />
+                <title>Address</title>
+                <link rel="canonical" href="http://mysite.com/example" />
+            </Helmet>
       <form onSubmit={handleSubmit}>
         <label htmlFor="details">Details : </label>
         <textarea  className='form-control mb-3'value={values.details} onChange={handleChange}  type="text" name='details' id='details' ></textarea>

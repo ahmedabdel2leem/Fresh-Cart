@@ -9,6 +9,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import 'slick-carousel/slick/slick.css';
 import "slick-carousel/slick/slick-theme.css";
 import './index.css';
+
 import {QueryClient,QueryClientProvider} from 'react-query'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
